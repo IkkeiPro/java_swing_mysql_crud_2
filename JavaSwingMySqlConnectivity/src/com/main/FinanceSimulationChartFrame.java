@@ -80,10 +80,10 @@ public class FinanceSimulationChartFrame extends JFrame {
             g2.drawLine(left, height - bottom, width - right, height - bottom);
             g2.drawLine(left, top, left, height - bottom);
 
-            drawSeries(g2, left, right, top, bottom, width, height, minValue, maxValue, Color.BLUE, "cash", 0);
-            drawSeries(g2, left, right, top, bottom, width, height, minValue, maxValue, Color.RED, "loan", 1);
-            drawSeries(g2, left, right, top, bottom, width, height, minValue, maxValue, new Color(0, 140, 0), "investment", 2);
-            drawSeries(g2, left, right, top, bottom, width, height, minValue, maxValue, new Color(140, 0, 140), "cash+investment-loan", 3);
+            drawSeries(g2, left, right, top, bottom, width, height, minValue, maxValue, Color.BLUE, "現金", 0);
+            drawSeries(g2, left, right, top, bottom, width, height, minValue, maxValue, Color.RED, "ローン", 1);
+            drawSeries(g2, left, right, top, bottom, width, height, minValue, maxValue, new Color(0, 140, 0), "投資額", 2);
+            drawSeries(g2, left, right, top, bottom, width, height, minValue, maxValue, new Color(140, 0, 140), "現金+投資額-ローン", 3);
 
             int tickCount = Math.min(6, points.size());
             g2.setFont(new Font(Font.SANS_SERIF, Font.PLAIN, 11));

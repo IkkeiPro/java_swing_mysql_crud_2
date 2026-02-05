@@ -50,15 +50,15 @@ public class FinanceSimulationInputFrame extends JFrame {
         setContentPane(contentPane);
         contentPane.setLayout(new GridLayout(10, 2, 8, 8));
 
-        txtInitialCash = createInputRow("initialCash", "1000000");
-        txtInitialLoan = createInputRow("initialLoan", "1000000");
-        txtAnnualIncomeIncrease = createInputRow("annualIncomeIncrease", "500000");
-        txtLoanInterestRate = createInputRow("loanInterestRate", "0.004");
-        txtInvestmentYieldAnnual = createInputRow("investmentYieldAnnual", "0.04");
-        txtMonthlyInvestmentAmount = createInputRow("monthlyLoanPayment", "100000");
-        txtYears = createInputRow("years", "10");
-        txtPayAtFirstMonth = createInputRow("payAtFirstMonth", "0");
-        txtLoanTermMonths = createInputRow("loanTermMonths", "480");
+        txtInitialCash = createInputRow("現金初期値", "1000000");
+        txtInitialLoan = createInputRow("ローン残高初期値", "1000000");
+        txtAnnualIncomeIncrease = createInputRow("年間貯金増加", "500000");
+        txtLoanInterestRate = createInputRow("ローン金利", "0.004");
+        txtInvestmentYieldAnnual = createInputRow("投資利回り", "0.04");
+        txtMonthlyInvestmentAmount = createInputRow("毎月の投資額", "100000");
+        txtYears = createInputRow("シミュレーション年数", "10");
+        txtPayAtFirstMonth = createInputRow("初月に返済する金額", "0");
+        txtLoanTermMonths = createInputRow("ローン月数", "480");
 
         contentPane.add(new JLabel(""));
         JButton btnRun = new JButton("Run Simulation");
