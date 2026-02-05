@@ -42,7 +42,7 @@ public class MainFrame extends JFrame {
 	 */
 	public MainFrame() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 350, 200);
+		setBounds(100, 100, 460, 230);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -126,5 +126,24 @@ public class MainFrame extends JFrame {
 		});
 		btnSelect.setBounds(135, 57, 89, 23);
 		contentPane.add(btnSelect);
+
+		JButton btnFinanceSimulator = new JButton("Finance Simulator");
+		btnFinanceSimulator.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				EventQueue.invokeLater(new Runnable() {
+					public void run() {
+						try {
+							FinanceSimulationInputFrame frame = new FinanceSimulationInputFrame();
+							frame.setLocationRelativeTo(null);
+							frame.setVisible(true);
+						} catch (Exception ex) {
+							ex.printStackTrace();
+						}
+					}
+				});
+			}
+		});
+		btnFinanceSimulator.setBounds(234, 57, 170, 23);
+		contentPane.add(btnFinanceSimulator);
 	}
 }
