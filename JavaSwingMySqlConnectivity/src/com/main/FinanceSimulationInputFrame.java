@@ -25,6 +25,7 @@ public class FinanceSimulationInputFrame extends JFrame {
     private JTextField txtMonthlyInvestmentAmount;
     private JTextField txtYears;
     private JTextField txtPayAtFirstMonth;
+    private JTextField txtLoanTermMonths;
 
     public static void main(String[] args) {
         EventQueue.invokeLater(new Runnable() {
@@ -43,11 +44,11 @@ public class FinanceSimulationInputFrame extends JFrame {
     public FinanceSimulationInputFrame() {
         setTitle("Finance Simulation Input");
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-        setBounds(100, 100, 520, 360);
+        setBounds(100, 100, 520, 400);
         contentPane = new JPanel();
         contentPane.setBorder(new EmptyBorder(10, 10, 10, 10));
         setContentPane(contentPane);
-        contentPane.setLayout(new GridLayout(9, 2, 8, 8));
+        contentPane.setLayout(new GridLayout(10, 2, 8, 8));
 
         txtInitialCash = createInputRow("initialCash", "1000000");
         txtInitialLoan = createInputRow("initialLoan", "1000000");
@@ -57,6 +58,7 @@ public class FinanceSimulationInputFrame extends JFrame {
         txtMonthlyInvestmentAmount = createInputRow("monthlyLoanPayment", "100000");
         txtYears = createInputRow("years", "10");
         txtPayAtFirstMonth = createInputRow("payAtFirstMonth", "0");
+        txtLoanTermMonths = createInputRow("loanTermMonths", "480");
 
         contentPane.add(new JLabel(""));
         JButton btnRun = new JButton("Run Simulation");
@@ -86,6 +88,7 @@ public class FinanceSimulationInputFrame extends JFrame {
             double monthlyInvestmentAmount = Double.parseDouble(txtMonthlyInvestmentAmount.getText().trim());
             int years = Integer.parseInt(txtYears.getText().trim());
             double payAtFirstMonth = Double.parseDouble(txtPayAtFirstMonth.getText().trim());
+            int loanTermMonths = Integer.parseInt(txtLoanTermMonths.getText().trim());
 
             List<FinanceSimulator.SimulationPoint> points = FinanceSimulator.simulate(
                     initialCash,
@@ -94,6 +97,7 @@ public class FinanceSimulationInputFrame extends JFrame {
                     loanInterestRate,
                     investmentYieldAnnual,
                     years,
+                    loanTermMonths,
                     payAtFirstMonth,
                     monthlyInvestmentAmount
             );
