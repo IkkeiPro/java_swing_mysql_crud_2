@@ -1,4 +1,4 @@
-# 住宅ローンシミュレーションアプリ
+# ローンシミュレーションアプリ
 
 ![main frame](JavaSwingMySqlConnectivity/images/MainFrame.png)
 ![financial_simulation_input_frame](JavaSwingMySqlConnectivity/images/FinanceSimulationInputFrame.png)
