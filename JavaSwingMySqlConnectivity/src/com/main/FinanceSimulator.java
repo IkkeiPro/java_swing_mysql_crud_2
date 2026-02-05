@@ -65,7 +65,7 @@ public class FinanceSimulator {
         int totalMonths = years * 12;
 
         int normalizedLoanTermMonths = Math.max(1, loanTermMonths);
-        double principalPayment = initialLoan / normalizedLoanTermMonths;
+        double principalPayment = Math.ceil(initialLoan / normalizedLoanTermMonths);
 
         List<SimulationPoint> points = new ArrayList<SimulationPoint>();
 
@@ -81,7 +81,6 @@ public class FinanceSimulator {
             double interest = 0;
             if (loan > 0) {
                 interest = loan * loanInterestMonthly;
-                loan += interest;
             }
 
             if (loan > 0) {
