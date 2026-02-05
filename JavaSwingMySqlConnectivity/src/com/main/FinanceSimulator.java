@@ -103,6 +103,9 @@ public class FinanceSimulator {
             if (month % 12 == 0) {
                 points.add(new SimulationPoint(month / 12, cash, loan, investment));
             }
+            // CSV 出力
+            System.out.printf("%d,%.2f,%.2f,%.2f,%.2f%n",
+                    month, cash, loan, investment, cash + investment - loan);
         }
 
         return points;

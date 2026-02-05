@@ -52,13 +52,13 @@ public class FinanceSimulationInputFrame extends JFrame {
 
         txtInitialCash = createInputRow("現金初期値", "1000000");
         txtInitialLoan = createInputRow("ローン残高初期値", "1000000");
-        txtAnnualIncomeIncrease = createInputRow("年間貯金増加", "500000");
-        txtLoanInterestRate = createInputRow("ローン金利", "0.004");
+        txtAnnualIncomeIncrease = createInputRow("年間貯金増加", "1000000");
+        txtLoanInterestRate = createInputRow("ローン金利", "0.03");
         txtInvestmentYieldAnnual = createInputRow("投資利回り", "0.04");
         txtMonthlyInvestmentAmount = createInputRow("毎月の投資額", "100000");
         txtYears = createInputRow("シミュレーション年数", "10");
         txtPayAtFirstMonth = createInputRow("初月に返済する金額", "0");
-        txtLoanTermMonths = createInputRow("ローン月数", "480");
+        txtLoanTermMonths = createInputRow("ローン月数", "600");
 
         contentPane.add(new JLabel(""));
         JButton btnRun = new JButton("Run Simulation");
