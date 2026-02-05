@@ -71,6 +71,10 @@ public class FinanceSimulationChartFrame extends JFrame {
                 maxValue = Math.max(maxValue, point.getNetWorth());
             }
 
+            // グラフに必ず 0 を含めて、ゼロラインを読み取りやすくする
+            minValue = Math.min(minValue, 0);
+            maxValue = Math.max(maxValue, 0);
+
             if (Math.abs(maxValue - minValue) < 1e-9) {
                 maxValue += 1;
                 minValue -= 1;
@@ -104,6 +108,11 @@ public class FinanceSimulationChartFrame extends JFrame {
                 g2.setColor(Color.GRAY);
                 g2.drawString(decimalFormat.format(value), 6, y + 4);
             }
+
+            int zeroY = toY(0, top, height - bottom, minValue, maxValue);
+            g2.setColor(new Color(120, 120, 120));
+            g2.setStroke(new BasicStroke(1.5f));
+            g2.drawLine(left, zeroY, width - right, zeroY);
 
             g2.dispose();
         }
